@@ -17,7 +17,9 @@ const BlogPost = ({ data }) => {
             </span>
           ))}
         </div>
-        <p className="body-text">{body.body}</p>
+        <p className="body-text">
+          <div dangerouslySetInnerHTML={{__html: body.childMarkdownRemark.html}}/>
+        </p>
         <div>
           <Link to="/blogposts">View more posts</Link>
         </div>
@@ -35,7 +37,9 @@ export const pageQuery = graphql`
       title
       slug
       body {
-        body
+        childMarkdownRemark {
+          html
+        }
       }
       image {
         file {
