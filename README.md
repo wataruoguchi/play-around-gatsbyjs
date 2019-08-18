@@ -1,3 +1,7 @@
+# play-around-gatsbyjs
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0cd7bb04-63a9-4b80-9d2e-2d20167530f2/deploy-status)](https://app.netlify.com/sites/nifty-shockley-5a0c34/deploys)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
