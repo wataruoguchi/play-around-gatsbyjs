@@ -1,8 +1,10 @@
-import React from "react"
+import * as React from "react"
+import { ReactElement } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-const BlogPost = ({ data }) => {
+
+const BlogPost = ({ data }: BlogPostData): ReactElement => {
   const { title, body, image, tags } = data.contentfulBlogPost
   return (
     <Layout>
@@ -17,9 +19,11 @@ const BlogPost = ({ data }) => {
             </span>
           ))}
         </div>
-        <p className="body-text">
-          <div dangerouslySetInnerHTML={{__html: body.childMarkdownRemark.html}}/>
-        </p>
+        <div className="body-text">
+          <div
+            dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
+          />
+        </div>
         <div>
           <Link to="/blogposts">View more posts</Link>
         </div>
@@ -50,3 +54,23 @@ export const pageQuery = graphql`
     }
   }
 `
+
+interface BlogPostData {
+  data: {
+    contentfulBlogPost: {
+      title: string;
+      slug: string;
+      body: {
+        childMarkdownRemark: {
+          html: string;
+        };
+      };
+      image: {
+        file: {
+          url: string;
+        };
+      };
+      tags: string[];
+    };
+  };
+}

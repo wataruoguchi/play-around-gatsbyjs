@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
@@ -7,6 +7,7 @@ module.exports = {
     author: `@wataruoguchi`,
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
@@ -18,6 +19,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    /* eslint-disable @typescript-eslint/camelcase */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -30,11 +32,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    /* eslint-enable @typescript-eslint/camelcase */
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID || '',
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
+        spaceId: process.env.CONTENTFUL_SPACE_ID || "",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

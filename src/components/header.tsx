@@ -1,8 +1,9 @@
+import * as React from "react"
+import { ReactElement } from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import * as PropTypes from "prop-types"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }): ReactElement => (
   <header
     style={{
       background: `rebeccapurple`,

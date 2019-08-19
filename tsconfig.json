@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./public",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "jsx": "react",
+    "target": "es5",
+    "allowJs": true
+  },
+  "include": ["./src"]
+}
