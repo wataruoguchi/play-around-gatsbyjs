@@ -5,7 +5,8 @@
     "strictNullChecks": true,
     "jsx": "react",
     "target": "es5",
-    "allowJs": true
+    "allowJs": true,
+    "strict": true
   },
   "include": ["./src"]
 }

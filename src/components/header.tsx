@@ -3,7 +3,7 @@ import { ReactElement } from "react"
 import { Link } from "gatsby"
 import * as PropTypes from "prop-types"
 
-const Header = ({ siteTitle }): ReactElement => (
+const Header = ({ siteTitle }: { siteTitle?: string }): ReactElement => (
   <header
     style={{
       background: `rebeccapurple`,

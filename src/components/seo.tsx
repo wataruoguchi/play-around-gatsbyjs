@@ -8,10 +8,17 @@
 import * as React from "react"
 import { ReactElement } from "react"
 import * as PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import Helmet, { HelmetProps } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }): ReactElement {
+interface SEOProps {
+  description?: string;
+  lang?: string;
+  meta?: HelmetProps["meta"];
+  title: string;
+}
+
+function SEO({ description, lang, meta, title }: SEOProps): ReactElement {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -68,7 +75,7 @@ function SEO({ description, lang, meta, title }): ReactElement {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(meta as any)} // How can I avoid using 'any'?
     />
   )
 }
