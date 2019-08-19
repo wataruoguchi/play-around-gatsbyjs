@@ -7,6 +7,7 @@ module.exports = {
     author: `@wataruoguchi`,
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {

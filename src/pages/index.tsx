@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`,`react`, `application`]}/>
+    <SEO title="Home" meta={[{name: 'keywords', content: [`gatsby`,`react`,`application`].join(', ')}]} />
     <div className="home">
       <h1>Hello There</h1>
       <p>Welcome to my blog.</p>
