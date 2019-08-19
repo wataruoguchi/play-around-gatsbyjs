@@ -1,10 +1,11 @@
 import * as React from "react"
+import { ReactElement } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogPosts = ({ data }) => {
+const BlogPosts = ({ data }: BlogPostsData): ReactElement => {
   const blogPosts = data.allContentfulBlogPost.edges
   return (
     <Layout>
@@ -46,3 +47,27 @@ export const query = graphql`
     }
   }
 `
+
+interface Node {
+  node: {
+    id: number;
+    title: string;
+    slug: string;
+    body: {
+      body: string;
+    };
+    image: {
+      file: {
+        url: string;
+      };
+    };
+    tags: string[];
+  };
+}
+interface BlogPostsData {
+  data: {
+    allContentfulBlogPost: {
+      edges: Node[];
+    };
+  };
+}

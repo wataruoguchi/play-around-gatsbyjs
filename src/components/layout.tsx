@@ -6,13 +6,14 @@
  */
 
 import * as React from "react"
+import { ReactElement } from "react"
 import * as PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children }): ReactElement => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
