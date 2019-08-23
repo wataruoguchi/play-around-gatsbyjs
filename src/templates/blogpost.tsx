@@ -4,6 +4,26 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+type BlogPostData = {
+  data: {
+    contentfulBlogPost: {
+      title: string;
+      slug: string;
+      body: {
+        childMarkdownRemark: {
+          html: string;
+        };
+      };
+      image: {
+        file: {
+          url: string;
+        };
+      };
+      tags: string[];
+    };
+  };
+}
+
 const BlogPost = ({ data }: BlogPostData): ReactElement => {
   const { title, body, image, tags } = data.contentfulBlogPost
   return (
@@ -54,23 +74,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-interface BlogPostData {
-  data: {
-    contentfulBlogPost: {
-      title: string;
-      slug: string;
-      body: {
-        childMarkdownRemark: {
-          html: string;
-        };
-      };
-      image: {
-        file: {
-          url: string;
-        };
-      };
-      tags: string[];
-    };
-  };
-}

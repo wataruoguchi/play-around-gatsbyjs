@@ -8,13 +8,18 @@
 import * as React from "react"
 import { ReactElement } from "react"
 import * as PropTypes from "prop-types"
-import Helmet, { HelmetProps } from "react-helmet"
+import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-interface SEOProps {
+type metaType = Array<{
+  property?: string;
+  name?: string;
+  content: string;
+}>
+type SEOProps = {
   description?: string;
   lang?: string;
-  meta?: HelmetProps["meta"];
+  meta?: metaType;
   title: string;
 }
 
@@ -34,6 +39,41 @@ function SEO({ description, lang, meta, title }: SEOProps): ReactElement {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const defaultMeta: metaType = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: site.siteMetadata.author,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ]
+  const propMeta: metaType = defaultMeta.concat(meta || [])
 
   return (
     <Helmet
@@ -42,40 +82,7 @@ function SEO({ description, lang, meta, title }: SEOProps): ReactElement {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta as any)} // How can I avoid using 'any'?
+      meta={propMeta}
     />
   )
 }
