@@ -18,7 +18,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, yarn build, and test
-      secrets: ["CONTENTFUL_SPACE_ID","CONTENTFUL_ACCESS_TOKEN"]
+      env:
+        - CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        - CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       run: |
         npm install -g yarn
         yarn
