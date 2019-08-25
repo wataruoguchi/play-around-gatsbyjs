@@ -1,3 +1,4 @@
+// https://www.gatsbyjs.org/docs/end-to-end-testing/
 /// <reference types="Cypress" />
 describe("Accessibility checks", () => {
   beforeEach(() => {
