@@ -12,13 +12,13 @@ jobs:
         node-version: [10.x]
 
     steps:
+    - secrets: ["CONTENTFUL_SPACE_ID","CONTENTFUL_ACCESS_TOKEN"]
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, yarn build, and test
-      secrets: ["CONTENTFUL_SPACE_ID","CONTENTFUL_ACCESS_TOKEN"]
+    - name: yarn install, build, and test
       run: |
         npm install -g yarn
         yarn
