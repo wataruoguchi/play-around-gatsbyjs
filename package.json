@@ -37,6 +37,7 @@
     "cypress-axe": "^0.5.1",
     "dotenv": "^8.0.0",
     "eslint": "^6.2.0",
+    "eslint-plugin-cypress": "^2.6.1",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.4",
     "identity-obj-proxy": "^3.0.0",
