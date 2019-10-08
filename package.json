@@ -45,7 +45,7 @@
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.10.2",
-    "start-server-and-test": "^1.10.0",
+    "start-server-and-test": "^1.10.4",
     "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
