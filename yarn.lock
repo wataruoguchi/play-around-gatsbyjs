@@ -2414,11 +2414,7 @@ bluebird@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
-bluebird@3.5.5:
-  version "3.5.5"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
-
-bluebird@^3.5.0, bluebird@^3.5.5, bluebird@^3.7.0:
+bluebird@3.7.0, bluebird@^3.5.0, bluebird@^3.5.5, bluebird@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.0.tgz#56a6a886e03f6ae577cffedeb524f8f2450293cf"
 
@@ -3444,6 +3440,14 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     semver "^5.5.0"
     shebang-command "^1.2.0"
     which "^1.2.9"
+
+cross-spawn@^7.0.0:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
+  dependencies:
+    path-key "^3.1.0"
+    shebang-command "^2.0.0"
+    which "^2.0.1"
 
 crypt@~0.0.1:
   version "0.0.2"
@@ -4772,17 +4776,19 @@ execa@0.10.0, execa@^0.10.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.11.0.tgz#0b3c71daf9b9159c252a863cd981af1b4410d97a"
+execa@2.1.0, execa@^2.0.3:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-2.1.0.tgz#e5d3ecd837d2a60ec50f3da78fd39767747bbe99"
   dependencies:
-    cross-spawn "^6.0.0"
-    get-stream "^4.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^3.0.0"
+    onetime "^5.1.0"
+    p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
 
 execa@^0.7.0:
   version "0.7.0"
@@ -4819,20 +4825,6 @@ execa@^1.0.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
-
-execa@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-2.0.4.tgz#2f5cc589c81db316628627004ea4e37b93391d8e"
-  dependencies:
-    cross-spawn "^6.0.5"
-    get-stream "^5.0.0"
-    is-stream "^2.0.0"
-    merge-stream "^2.0.0"
-    npm-run-path "^3.0.0"
-    onetime "^5.1.0"
-    p-finally "^2.0.0"
-    signal-exit "^3.0.2"
-    strip-final-newline "^2.0.0"
 
 executable@4.1.1, executable@^4.1.0:
   version "4.1.1"
@@ -9631,7 +9623,7 @@ path-key@^2.0.0, path-key@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
-path-key@^3.0.0:
+path-key@^3.0.0, path-key@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-3.1.0.tgz#99a10d870a803bdd5ee6f0470e58dfcd2f9a54d3"
 
@@ -11349,9 +11341,19 @@ shebang-command@^1.2.0:
   dependencies:
     shebang-regex "^1.0.0"
 
+shebang-command@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
+  dependencies:
+    shebang-regex "^3.0.0"
+
 shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
+
+shebang-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
 
 shell-quote@1.6.1:
   version "1.6.1"
@@ -11717,14 +11719,14 @@ stackframe@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.0.4.tgz#357b24a992f9427cba6b545d96a14ed2cbca187b"
 
-start-server-and-test@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/start-server-and-test/-/start-server-and-test-1.10.0.tgz#a7cd88932a52b42bc9de184430a498338e426c0b"
+start-server-and-test@^1.10.5:
+  version "1.10.5"
+  resolved "https://registry.yarnpkg.com/start-server-and-test/-/start-server-and-test-1.10.5.tgz#6078d665a93372e74d5e7e5ece87634c81926077"
   dependencies:
-    bluebird "3.5.5"
+    bluebird "3.7.0"
     check-more-types "2.24.0"
     debug "4.1.1"
-    execa "0.11.0"
+    execa "2.1.0"
     lazy-ass "1.6.0"
     ps-tree "1.2.0"
     wait-on "3.3.0"
@@ -13118,6 +13120,12 @@ which-pm-runs@^1.0.0:
 which@^1.2.14, which@^1.2.9, which@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
+  dependencies:
+    isexe "^2.0.0"
+
+which@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/which/-/which-2.0.1.tgz#f1cf94d07a8e571b6ff006aeb91d0300c47ef0a4"
   dependencies:
     isexe "^2.0.0"
 
