@@ -13,7 +13,7 @@
     "gatsby-plugin-sharp": "^2.2.11",
     "gatsby-plugin-tslint": "^0.0.2",
     "gatsby-plugin-typescript": "^2.1.2",
-    "gatsby-source-contentful": "^2.1.19",
+    "gatsby-source-contentful": "^2.1.49",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-remark": "^2.6.27",
     "gatsby-transformer-sharp": "^2.2.21",
